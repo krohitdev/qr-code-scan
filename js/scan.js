@@ -20,6 +20,7 @@
             qrCodeMessage => {
                 // do something when code is read. For example:
                 console.log(`QR Code detected: ${qrCodeMessage}`);
+                alert(`QR Code detected: ${qrCodeMessage}`);
             },
             errorMessage => {
                 // parse error, ideally ignore it. For example:
