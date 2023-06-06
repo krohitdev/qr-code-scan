@@ -25,6 +25,7 @@
 
       function onScanSuccess(qrCodeMessage) {
         qrResultContainer.innerHTML = `Scanned QR Code: ${qrCodeMessage}`;
+alert(`Scan result ${qrCodeMessage}`);
         html5QrcodeScanner.clear();
       }
     });
