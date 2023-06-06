@@ -27,7 +27,7 @@
         qrResultContainer.innerHTML = `Scanned QR Code: ${decodedText}`;
         console.log(`Code matched = ${decodedText}`, decodedResult);
         html5QrcodeScanner.clear();
-        alert(`Scan result ${qrCodeMessage}`);
+        alert(`Scan result ${decodedText}`, decodedResult);
       }
     });
   </script>
