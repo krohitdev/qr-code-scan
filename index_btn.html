@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>QR Code Scanner</title>
+  <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+
+<body>
+  <button id="scanButton">Scan QR Code</button>
+  <div id="qrResult" style="width:500px"></div>
+
+  <script>
+    const scanButton = document.getElementById('scanButton');
+    const qrResultContainer = document.getElementById('qrResult');
+
+    scanButton.addEventListener('click', () => {
+      const html5QrcodeScanner = new Html5QrcodeScanner(
+        'qrResult',
+        { fps: 10, qrbox: 250 },
+        // { facingMode: 'environment' } // Specify the camera facing mode
+      );
+
+      html5QrcodeScanner.render(onScanSuccess);
+
+      function onScanSuccess(qrCodeMessage) {
+        qrResultContainer.innerHTML = `Scanned QR Code: ${qrCodeMessage}`;
+        html5QrcodeScanner.clear();
+      }
+    });
+  </script>
+</body>
+
+</html>
