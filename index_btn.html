@@ -23,10 +23,11 @@
 
       html5QrcodeScanner.render(onScanSuccess);
 
-      function onScanSuccess(qrCodeMessage) {
-        qrResultContainer.innerHTML = `Scanned QR Code: ${qrCodeMessage}`;
-alert(`Scan result ${qrCodeMessage}`);
+      function onScanSuccess(decodedText,decodedResult) {
+        qrResultContainer.innerHTML = `Scanned QR Code: ${decodedText}`;
+        console.log(`Code matched = ${decodedText}`, decodedResult);
         html5QrcodeScanner.clear();
+        alert(`Scan result ${qrCodeMessage}`);
       }
     });
   </script>
