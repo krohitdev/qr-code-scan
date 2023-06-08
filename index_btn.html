@@ -14,7 +14,7 @@
     const scanButton = document.getElementById('scanButton');
     const qrResultContainer = document.getElementById('qrResult');
 
-    scanButton.addEventListener('click', () => {
+   /* scanButton.addEventListener('click', () => {
       const html5QrcodeScanner = new Html5QrcodeScanner(
         'qrResult',
         { fps: 20, qrbox: 450 },
@@ -29,6 +29,38 @@
         html5QrcodeScanner.clear();
         alert(`Scan result ${decodedText}`, decodedResult);
       }
+    }); */
+    scanButton.addEventListener('click', () => {
+      /*const html5QrcodeScanner = new Html5QrcodeScanner(
+        'qrResult',
+        { fps: 10, qrbox: 250,
+          rememberLastUsedCamera: true,
+  // Only support camera scan type.
+  supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA] },
+        
+        // { facingMode: 'environment' } // Specify the camera facing mode
+      );
+
+      html5QrcodeScanner.render(onScanSuccess);
+
+      function onScanSuccess(decodedText,decodedResult) {
+        qrResultContainer.innerHTML = `Scanned QR Code: ${decodedText}`;
+        console.log(`Code matched = ${decodedText}`, decodedResult);
+        html5QrcodeScanner.clear();
+        alert(`Scan result ${qrCodeMessage}`);
+      } */
+
+      const html5QrCode = new Html5Qrcode(
+        "reader", { formatsToSupport: [Html5QrcodeSupportedFormats.QR_CODE] });
+      const qrCodeSuccessCallback = (decodedText, decodedResult) => {
+        /* handle success */
+        console.log(`Scan result ${decodedText}`, decodedResult);
+                alert(`Scan result ${decodedText}`, decodedResult);
+      };
+      const config = { fps: 10, qrbox: { width: 250, height: 250 } };
+
+      // If you want to prefer front camera
+      html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
     });
   </script>
 </body>
