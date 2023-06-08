@@ -36,7 +36,7 @@
       } */
 
       const html5QrCode = new Html5Qrcode(
-        "reader", { formatsToSupport: [Html5QrcodeSupportedFormats.QR_CODE] });
+        "qrResult", { formatsToSupport: [Html5QrcodeSupportedFormats.QR_CODE] });
       const qrCodeSuccessCallback = (decodedText, decodedResult) => {
         /* handle success */
         console.log(`Scan result ${decodedText}`, decodedResult);
