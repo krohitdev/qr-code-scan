@@ -47,7 +47,7 @@
          html5QrCode.stop().then((ignore) => {
           // QR Code scanning is stopped.
         //  alert('camera stopeed');
-            $('#action').text(`camera stopeed`);
+            $('#action').append(`camera stopeed`);
         })
       };
       const config = { fps: 10, qrbox: { width: 350, height: 350 } };
