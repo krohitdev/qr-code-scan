@@ -17,7 +17,7 @@
     const qrResultContainer = document.getElementById('qrResult');
 
     scanButton.addEventListener('click', () => {
-      const html5QrcodeScanner = new Html5QrcodeScanner(
+    /*  const html5QrcodeScanner = new Html5QrcodeScanner(
         'qrResult',
         { fps: 10, qrbox: 250,
           rememberLastUsedCamera: true,
@@ -34,19 +34,19 @@
         console.log(`Code matched = ${decodedText}`, decodedResult);
         html5QrcodeScanner.clear();
         alert(`Scan result ${qrCodeMessage}`);
-      }
+      } */
 
-      /* const html5QrCode = new Html5Qrcode(
+      const html5QrCode = new Html5Qrcode(
         "qrResult", { formatsToSupport: [Html5QrcodeSupportedFormats.QR_CODE] });
       const qrCodeSuccessCallback = (decodedText, decodedResult) => {
         /* handle success */
-    /*    console.log(`Scan result ${decodedText}`, decodedResult);
+      console.log(`Scan result ${decodedText}`, decodedResult);
                 alert(`Scan result ${decodedText}`, decodedResult);
       };
       const config = { fps: 10, qrbox: { width: 350, height: 350 } };
 
       // If you want to prefer front camera
-      html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback); */
+      html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback); 
   
 
     });
