@@ -42,18 +42,20 @@
       const qrCodeSuccessCallback = (decodedText, decodedResult) => {
         /* handle success */
       console.log(`Scan result ${decodedText}`, decodedResult);
-                $('#action').html(`Scan result ${decodedText}`);
+        $('#action').append(`<br/>Start Scanning`);
+                $('#action').html(`<br/>Scan result ${decodedText}`);
         
          html5QrCode.stop().then((ignore) => {
           // QR Code scanning is stopped.
         //  alert('camera stopeed');
-            $('#action').append(`camera stopeed`);
+            $('#action').append(`<br/>camera stopeed`);
         })
       };
       const config = { fps: 10, qrbox: { width: 350, height: 350 } };
 
       // If you want to prefer front camera
       html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback); 
+      
   
 
     });
