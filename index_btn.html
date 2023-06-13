@@ -38,10 +38,16 @@
 
       const html5QrCode = new Html5Qrcode(
         "qrResult", { formatsToSupport: [Html5QrcodeSupportedFormats.QR_CODE] });
+
       const qrCodeSuccessCallback = (decodedText, decodedResult) => {
         /* handle success */
       console.log(`Scan result ${decodedText}`, decodedResult);
                 alert(`Scan result ${decodedText}`, decodedResult);
+        
+         html5QrCode.stop().then((ignore) => {
+          // QR Code scanning is stopped.
+          alert('camera stopeed');
+        })
       };
       const config = { fps: 10, qrbox: { width: 350, height: 350 } };
 
