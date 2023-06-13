@@ -42,7 +42,7 @@
       const qrCodeSuccessCallback = (decodedText, decodedResult) => {
         /* handle success */
       console.log(`Scan result ${decodedText}`, decodedResult);
-                $('#action').html(`Scan result ${decodedText} ------- ${decodedResult}`);
+                $('#action').html(`Scan result ${decodedText}`);
         
          html5QrCode.stop().then((ignore) => {
           // QR Code scanning is stopped.
